@@ -14,7 +14,7 @@ app.get('/api/greeting', (req, res) => {
 
 app.post('/join', (req, res) => {
   console.log(req.body);
-  return res.send({ login: 'success' });
+  return res.send({ join: 'success' });
 });
 
 app.post('/login', (req, res) => {
