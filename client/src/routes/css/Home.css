@@ -1,0 +1,41 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style:none;
+}
+
+html, body, .homeContainer{
+    background-color:#d7c496;
+}
+
+.main{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.main .books{
+    position: relative;
+    top:0;
+    left:100px;
+    width:70%;
+    padding:50px;
+    padding-top:70px;
+}
+
+.books_book{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+

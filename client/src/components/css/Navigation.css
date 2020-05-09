@@ -1,0 +1,27 @@
+.navContainer{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 5;
+    width:250px;
+    height:100%;
+    border-right:1px solid #656464;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navContainer li{
+    margin:20px 0;
+
+}
+
+.navContainer li a{
+    text-decoration: none;
+    color:#656464;
+    font-size:20px;
+    font-weight:300;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
