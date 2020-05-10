@@ -1,7 +1,7 @@
 {
   "name": "y",
   "version": "1.0.0",
-  "description": "show best seller and new books",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "server": "nodemon --exec babel-node app.js",
