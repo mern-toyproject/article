@@ -31,7 +31,7 @@ class Login extends Component {
     // @route   POST /login
     // @desc    User login
     // @access  Private
-    fetch('/login', {
+    fetch('api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

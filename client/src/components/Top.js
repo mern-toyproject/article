@@ -15,6 +15,15 @@ function Top() {
         <li>
           <a href='/login'>LOGIN</a>
         </li>
+        <li>
+          <form className='search_book'>
+            <input
+              type='text'
+              name='search'
+              placeholder='which one do you want to find?'
+            />
+          </form>
+        </li>
       </ul>
     </div>
   );

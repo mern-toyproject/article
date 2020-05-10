@@ -35,7 +35,7 @@ class Join extends Component {
     // @route   POST /join
     // @desc    Create user account
     // @access  Private
-    fetch('/join', {
+    fetch('api/join', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
