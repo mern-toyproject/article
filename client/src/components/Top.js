@@ -6,7 +6,7 @@ function Top() {
     <div className='top'>
       <div className='top-left'></div>
       <div className='top_logo'>
-        <a href='/'>BOOKS</a>
+        <a href='/'>ARTICLES</a>
       </div>
       <ul className='top-right'>
         <li>
@@ -17,11 +17,7 @@ function Top() {
         </li>
         <li>
           <form className='search_book'>
-            <input
-              type='text'
-              name='search'
-              placeholder='which one do you want to find?'
-            />
+            <input type='text' name='search' placeholder='Search' />
           </form>
         </li>
       </ul>

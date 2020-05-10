@@ -1,51 +1,47 @@
 import React from 'react';
 import Axios from 'axios';
-import Navigation from '../components/Navigation';
-import Book from '../components/Book';
+import Navigation, { clickedTopic } from '../components/Navigation';
 import Top from '../components/Top';
 import './css/Home.css';
+import Article from '../components/Article';
+
+let url = `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=0XDkuSm03JGQcVWg0Feu2IosfLcWSb71`;
 
 class Home extends React.Component {
   state = {
     isDataLoaded: false,
-    books: [],
+    results: []
   };
 
   componentDidMount() {
-    this.getBooks();
+    this.getAricles();
   }
 
-  getBooks = async () => {
+  getAricles = async () => {
     const {
-      data: {
-        results: { books },
-      },
-    } = await Axios.get(
-      'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=WWhxdT47Hy6gmIdTbaHrKNAFWw4lOGKk'
-    );
-    console.log(books);
-    this.setState({ isDataLoaded: true, books });
+      data: { results }
+    } = await Axios.get(url);
+    this.setState({ isDataLoaded: true, results });
   };
 
   render() {
-    const { books, isDataLoaded } = this.state;
+    const { results, isDataLoaded } = this.state;
     return (
       <div className='homeContainer'>
         <Top />
         <div className='main'>
           <Navigation />
-          <div className='books'>
+          <div className='articles'>
             {isDataLoaded ? (
-              <div className='books_book'>
-                {books.map((book, key) => (
-                  <Book
-                    key={key}
-                    title={book.title}
-                    rank={book.rank}
-                    description={book.description}
-                    author={book.author}
-                    poster={book.book_image}
-                    buy={book.amazon_product_url}
+              <div className='articles_article'>
+                {results.map((result, key) => (
+                  <Article
+                    title={result.title}
+                    subtitle={result.abstract}
+                    writer={result.byline}
+                    date={result.updated_date}
+                    subsection={result.subsection}
+                    picture={result.multimedia[0].url}
                   />
                 ))}
               </div>
